@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/blue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:layout_margin="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textViewFormPenerimaanBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Form Penerimaan Barang"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPilihanBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilihan Barang:"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupPilihanBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBarangKaryawan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barang\nKaryawan"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBarangPerusahaan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barang\nPerusahaan"/>
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/TextResi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioGroupPilihanBarang"
+                    android:hint="Nomor Resi/Kode Barang"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/btnScanQR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan QR Code"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@+id/editTextResi"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"/>
+
+                <EditText
+                    android:id="@+id/editTextPengirim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Pengirim"
+                    android:inputType="text"
+                    android:layout_below="@+id/btnScanQR"
+                    android:layout_marginTop="16dp"/>
+
+                <EditText
+                    android:id="@+id/editTextPenerima"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Penerima"
+                    android:inputType="text"
+                    android:layout_below="@+id/editTextPengirim"
+                    android:layout_marginTop="16dp"/>
+
+                <EditText
+                    android:id="@+id/editTextTanggalMasuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal Masuk"
+                    android:layout_marginTop="16dp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:onClick="showDatePickerDialog" />
+
+                <EditText
+                    android:id="@+id/editTextStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextTanggalMasuk"
+                    android:layout_marginTop="16dp"
+                    android:hint="Status"/>
+
+                <EditText
+                    android:id="@+id/editTextDateReceived"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextStatus"
+                    android:layout_marginTop="16dp"
+                    android:hint="Tanggal Terima"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:onClick="showDatePickerDialog"/>
+
+                <ImageView
+                    android:id="@+id/imageViewFotoBarang"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/editTextTanggalMasuk"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitCenter"/>
+
+                <Button
+                    android:id="@+id/btnUploadFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Foto Barang"
+                    android:layout_below="@+id/imageViewFotoBarang"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/blue"
+                    android:layout_marginTop="16dp"/>
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="8dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</ScrollView>
